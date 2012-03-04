@@ -1,0 +1,6 @@
+<p>{{ tag.name }}</p>
+
+{% for article in tag_article_list %}
+<p><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></p>
+{% endfor %}
+

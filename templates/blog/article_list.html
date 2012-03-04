@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Ragnarok
+{% endblock %}
+{% block content %}
+                <div id="content">
+        		    <div id="main-content">
+                            {% for article in article_list %}
+        					<div class="post">
+                                <h2><a href="{{ article.get_absolute_url }}" >{{ article.title }}</a></h2>
+                                <span class="date">{{ article.publish_date|date:"F jS, Y" }}</span>
+                                <div class="entry">
+                                        {{ article.summary_html|safe }}
+                                </div>
+                           </div>
+                           {% endfor %}
+        			</div>
+                </div>
+{% endblock %}
+

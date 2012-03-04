@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+About Ragnarok
+{% endblock %}
+
+{% block content %}
+    <div id="content">
+		<div id="main-content">
+			<div class="post">
+                    <p>Hi, 我是Ragnarok，一名来自中大软院的小白...</p>
+                    <p>屌丝|码农|爱读书|爱技术|爱Linux</p>
+                    <p>写过点android,学过下Python,此博客乃基于Django搭建</p>
+                    <p>希望通过搭建Blog，能够养成写Blog的习惯，不停写下文章来记录学习的轨迹，总结学习到的东西</p>
+                    <p>我的新浪微薄</p>
+                    <iframe width="100%" height="500" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=500&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1789115810&verifier=7d8b8542&dpc=1"></iframe>
+
+            </div>
+        </div>
+        <div id="comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                    var disqus_identifier = "123123";
+                    var disqus_url = "{{ site_url }}/about";
+            </script>
+            <script type="application/javascript" src="http://disqus.com/forums/{{ shortname }}/embed.js"></script>
+            <noscript><a href="http://disqus.com/forums/{{ shortname }}/?url=ref">View the discussion thread.</a></noscript>
+            <p><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
+        </div>
+    </div>
+{% endblock %}
