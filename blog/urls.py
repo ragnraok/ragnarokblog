@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import patterns, url
-from ragnarokblog.blog.models import Category, Article
 
 urlpatterns = patterns('ragnarokblog.blog.views',
     url(r'^$',

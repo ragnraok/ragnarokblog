@@ -4,34 +4,51 @@
 {% endblock %}
 
 {% block content %}
-    <div id="content">
-		<div id="main-content">
-			<div class="post">
-                    <h2>{{ article.title }}</h2>
-                    <span class="date">{{ article.publish_date|date:"F jS, Y" }}</span>
-                    <div class="entry"> 
-                            {{ article.body|safe }}
-			        </div>
-					{% if article.tags %}
-                    <p class="inline_tag_list"> Tags:
-                    {% for tag in article.tags.split %}
-                    <a href="/blog/tags/{{ tag }}">{{ tag }}</a>
-                    {% endfor %}
-                    </p>
-					{% endif %}
-            </div>
-        </div>
-        {% if article.enable_comment %}
-        <div id="comments">
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                    var disqus_identifier = "{{ article.id }}";
-                    var disqus_url = "{{ site_url }}{{ article.get_absolute_url }}";
-            </script>
-            <script type="application/javascript" src="http://disqus.com/forums/{{ shortname }}/embed.js"></script>
-            <noscript><a href="http://disqus.com/forums/{{ shortname }}/?url=ref">View the discussion thread.</a></noscript>
-            <p><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
-        </div>
-		{% endif %}
-    </div>
+		<!-- section start -->
+		<section class="post page1">
+		<div class="title">
+				<h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+				<p>
+				<span class="meta-time">{{ article.publish_date|date:"F jS, Y" }}</span>
+				</p>
+		</div>
+		<div class="content">
+				<div class="clear"></div>
+				{{ article.body|safe }}
+				<p></p>
+				<div class="meta-tag">Tag:
+						{% for tag in article.tags.split %}
+                    	<a href="/blog/tags/{{ tag }}">{{ tag }}</a>
+						{% endfor %}
+				</div>
+		</div>
+		<div class="clear"></div>
+		</section>
+		<!-- section end -->
+
+		{% if article.enable_comment %}
+		<div id="comments">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+						var disqus_identifier = "{{ article.id }}";
+						var disqus_url = "{{ site_url }}{{ article.get_absolute_url }}";
+						</script>
+						<script type="application/javascript" src="http://disqus.com/forums/{{ shortname }}/embed.js"></script>
+						<noscript><a href="http://disqus.com/forums/{{ shortname }}/?url=ref">View the discussion thread.</a></noscript>
+						<p><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
+				</div>
+				{% endif %}
+		</div>
+		<div id="sidebar">
+				<div class="widget" id="known">		
+						<p></p>
+				</div>
+				<div class="widget" id="rss">		
+						<ul>
+								<li></li>
+								<li></li>
+						</ul>
+				</div>		
+		</div><!-- end #sidebar -->
+		
 {% endblock %}

@@ -1,251 +1,175 @@
-/*  
-Theme Name: Vostok Theme - White
-Theme URI: http://www.vostoktheme.com/
-Description: A clean and elegant theme for Wordpress
-Version: 1.1
-Author: Javier Cañada, Rubén Lozano, Mark MacKay
-Template: vostok
-Author URI: http://www.vostoktheme.com/
+/*
+Theme Name:Dolphin
+Theme URI:http://85s.me
+Description:涓€娆捐交鍗氬鏍峰紡鐨勯鏍硷紝璧峰悕涓篋olphin锛屾剰涓烘捣璞氾紝甯屾湜濡傛捣璞氳埇浼樼锛屼翰鍜岋紝鍙椾汉鍠滄銆�
+Version:1.0.0
+Author:鏂瑰闃冲厜
+Author URI:http://85s.me
 */
 
-@import url("../vostok/style.css");
+/*---鍏ㄥ眬鏍峰紡 http://85s.me---*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,header,hgroup,menu,nav,section,footer {font-weight:inherit;margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+@font-face {font-family: 'josefinsansRegular'; src: url('../font/josefinsans-webfont.eot');src: url('../font/josefinsans-webfont.eot?#iefix') format('../font/embedded-opentype'),url('../font/josefinsans-webfont.woff') format('woff'),url('../font/josefinsans-webfont.ttf') format('truetype'),url('../font/josefinsans-webfont.svg#josefinsansRegular') format('svg');font-weight: normal; font-style: normal;}
+body{background-color:#fafafa;color:#494949;font-size:13px}
+body,input,blockquote,textarea,h1,#toolBox{font-family:Microsoft YaHei,'\5FAE\8F6F\96C5\9ED1',WenQuanYi Micro Hei,'\6587\6CC9\9A7F\5FAE\7C73\9ED1',serif,PMingLiU,Arial;}
+h1,h2,h3,h4,h5{font-weight:normal}
+ol,ul,li{list-style:none}
+table{border-collapse:collapse;border-spacing:0;width:100%}
+caption,th,td{font-weight:normal;text-align:left;vertical-align:top}
+a:link,a:visited{color:#FF8C00;text-decoration:none}
+a:hover{color:#d54e21;text-decoration:none}
+.clear{content:".";display:block;height:0;clear:both;visibility:hidden}
+header,article,aside,section,footer,nav,figure,figcaption{display:block}
+body{background:#3a3a3a url("../images/bg-body.png")}
 
+/*闄勫姞鐗规晥 http://85s.me*/
+::selection {color: #D27400;background: #dcdcdc;}
+::-moz-selection {color: #D27400;background: #dcdcdc;}
 
-html, body {
-	background: #f3f3f3;
-	 }
-	
-strong {
-	color: #333;
-}
+/*---澶撮儴鏍峰紡 http://85s.me---*/
+#main{width:784px;margin:58px auto 0 auto;padding:0px 0;-moz-box-shadow: 0px 0px 15px #ddd;-webkit-box-shadow: 0px 0px 15px #ddd;box-shadow: 0px 0px 15px #ddd;background-color:#f0f0f0;border-style:solid;border-color:#d5d5d5 #d0d0d0 #d0d0d0 #d5d5d5;border-width:1px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;z-index:20;}
+#header,#footer,#comments h3{font-family:Palatino,'palatino linotype',serif}
+#header{width:784px;height:38px;margin:0 auto;padding-top:15px;}
+#header h1{color:#FF8C00;margin-bottom:10px;text-align:center;}
+#header h1 a{text-decoration:none;color:#FF8C00;height:60px;line-height:48px;font-size:40px;font-weight:normal;}
+#header h1 a:hover{opacity:.7}
+#header h3 {height:0px;display:none;}
+#header p.hearch {font-size: 24px;color: white;text-align: center;text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);margin-top:25px;}
+#header ul{width:360px;margin:0 auto;padding:0;color:#b4b4b4;padding:3px 5px;text-align:center}
+#header li{float:left;list-style:none;margin:0 5px;padding:0;}
+#header li:before{content:"|";padding:0 15px 0 5px}
+#header li:first-child:before{content:"";padding:0}
+#header li a{color:#00a9ff;opacity:.65;text-decoration:none;text-transform:uppercase}
+#header li a:hover{opacity:1;text-decoration:underilne}
 
-#wrapper {
-	background: #f3f3f3;
-	color: #666;
-}
+/*---鑴氶儴鏍峰紡 http://85s.me---*/
+#footer {width:784px;margin:0 auto;height:30px;margin-top:10px;font-size:14px;color:#FAFAFA;font-family:Microsoft YaHei}
+#footer a{color:#00a9ff}
+#footer .CLeft{margin-right:10px;float:left;}
+#footer .CRight{text-align:right;float:right;}
 
-#header a:link,
-#header a:visited {
-	color: #000;
-	text-shadow: 0 1px 2px #fff;
-}
+/*---渚ц竟鏍忔牱寮� http://85s.me---*/
+#sidebar {overflow:hidden;width:666px;margin:15px auto;}
+#known{width:460px;float:left;text-align:left;line-height:28px;overflow:hidden}
+#rss {float:right;}
+#rss ul {margin:0 auto;}
+#rss ul li {height:28px;width:36px;display:inline-block;margin:0 5px;}
+#rss ul li a {display:block;width:28px;height:28px;margin:0px 4px;}
+span.hover {display:block;width:28px;height:28px;}
+.icon1 {background:url(/static/images/rss.gif) no-repeat top;}
+.icon1 span.hover {background:url(/static/images/rss.gif) no-repeat bottom;}
+.icon2 {background:url(../images/tqq.gif) no-repeat top;}
+.icon2 span.hover {background:url(../images/tqq.gif) no-repeat bottom;}
+.icon3 {background:url(../images/tsina.gif) no-repeat top;}
+.icon3 span.hover {background:url(/images/tsina.gif) no-repeat bottom;}
+.icon4 {background:url(../images/rssmail.gif) no-repeat top;}
+.icon4 span.hover {background:url(../images/rssmail.gif) no-repeat bottom;}
 
-#header a:hover,
-#header a:active,
-#header a:focus {
-	color: #0087C1;
-}
+/*---棣栭〉鏂囩珷閮ㄥ垎 http://85s.me---*/
+#main .post,#main .post1{margin:20px 60px 40px;padding-bottom:30px;width:660px;border-bottom:1px dotted #CCC;position:relative}
+#main .title{text-align:center}
+#main .title h2{font-size:30px;font-weight:normal;line-height:48px}
+#main .title,#main .title a{color:#666;text-shadow:0 1px 0 #fff;text-decoration:none;font-family:'josefinsansRegular',arial,serif}
+#main .title p{font-size:15px;padding-bottom:8px;padding-top:5px}
+#main .content{padding-top:20px;text-align:left;}
+#main .content p{line-height:2em;font-size:15px;padding-bottom:2px;text-shadow:0 1px 0 rgba(255,255,255,0.4)}
+#main .content img{max-width:660px;height:auto;}
+#main .content h1{font-size:25px;font-weight:normal;padding-bottom:10px}
+#main .content h2{font-size:20px;font-weight:normal;padding-bottom:10px}
+#main .content h3{font-size:15px;font-weight:normal;padding-bottom:10px}
+#main .content h4{font-size:10px;font-weight:normal;padding-bottom:10px}
+#main .cimg{text-align:center;}
+#main .cimg img{border:#ccc solid 2px;background:#fafafa;padding:3px;}
+#main pre,code {font-family:font-family:'andale mono','lucida console',monospace,"Microsoft YaHei",鏂囨硥椹垮井绫抽粦;line-height:1.5;font-size:13px;}
+#main code,pre {-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;padding:10px;border:1px dashed #494949;display:block;line-height:16px;overflow:auto;}
+#main .more{display:none}
+#main .page-num{width:34px;height:52px;padding:0 10px 0 18px;position:absolute;top:10px;right:-122px;text-align:center;font-weight:normal;font-size:36px;line-height:54px;color:white;text-shadow:0 1px 0 rgba(0,0,0,0.25);background:url("../images/all.png") 0 -98px no-repeat}
 
-#header p.description {
-  color: #999;
-}
+/*棣栭〉-鏂囩珷灏忓浘鏍囨牱寮�*/
+#main .meta-comm,#main .meta-cat,#main .meta-time,#main .meta-tag {padding-left:20px;margin-right:20px;background-repeat:no-repeat;background-position:1px 1px;}
+#main .meta-comm{background-image:url(../images/comment.png);}
+#main .meta-cat{background-image:url(../images/cat.png);}
+#main .meta-time {background-image:url(../images/date.png);}
+#main .meta-tag {background-image:url(../images/tag.png);float:left;margin-top:6px;}
 
-.back:link,
-.back:visited {
-	color: #f60;
-}
+/*棣栭〉-椤电爜鏍峰紡*/
+#pagenavi{text-align:center;}
+#pagenavi,#cateName,#tagName{margin:auto 2px;text-shadow:0 1px 0 white;text-align:center;font-family:'josefinsansRegular',arial,serif;font-size:45px;font-weight:normal;line-height:40px;margin-bottom:10px;padding:6px 0;}
+#pagenavi {width:666px;margin:0 auto;margin-top:-40px;}
+#pagenavi li {margin:0 5px 0 0;	display:inline;}
+#pagenavi li a {color:#aaa;text-decoration:none;}
+#pagenavi li a:hover {color:#FF8C00;text-decoration:none;}
+#pagenavi #line{margin:0 5px;margin-left:12px;}
+#pagenavi .current a{color:#FF8C00;}
 
-.back:hover,
-.back:active,
-.back:focus {
-	color: #FFF;
-}
+/*鍏充簬椤甸潰 http://85s.me*/
+#reading .title,#reading .title a{font-family:Microsoft YaHei;border-bottom:1px solid #EAEAEA;margin-bottom:0;font-size:24px;}
+#reading .post-txt,#reading .info{line-height:30px;margin:10px auto;text-align:left;}
+#reading .post-txt{text-indent:2em;}
+#reading .post-txt img{float:right;border:#ccc solid 1px;padding:3px;background:#fafafa;}
 
-.post {
-	background: #fff;
-	border: 1px solid #ddd;
-}
+/*褰掓。椤甸潰 http://85s.me*/
+#reading .info{line-height:30px;margin-left:120px;text-align:left;padding-left:40px;margin-bottom:0;}
+#reading .car-toggler{margin-left:130px;}
+#reading .car-yearmonth{cursor:pointer}
+#reading .car-monthlisting{padding-left:40px;}
 
+/*鏍囩椤� http://85s.me*/
+#reading .tags{margin-top:5px;} 
+#reading .tags a{margin:5px;margin-left:0;line-height:25px;font-size:15px;} 
 
-.post h2,
-.post h3,
-.post h4,
-.post h5,
-#search h2,
-.emptysearch,
-.error {
-	color: #222;
-}
+/*鏂囩珷姝ｉ〉 http://85s.me*/
+#nav{height:24px;width:666px;margin:0 auto;margin-top:-30px;}
+#thePrev{float:left;}
+#theNext{float:right;}
 
-.post h2 a:link,
-.post h2 a:visited {
-	color: #222;
-}
+/*璇勮 http://85s.me*/
+#comments {	padding-top:20px;border-top:1px dotted #CCC;width:666px;margin:0 auto;text-align:left;}
+#comments-info,#response {color:#D27400;font-size:16px;margin-bottom:20px;}
+.comment-list #response {display:none;}
+.comment-list {display:block;zoom:1;}
+.comment-list,.comment-list ol {margin:0;list-style:none;}
+.comment-list ol {padding-top:10px;}
+.comment-list li {margin:0;display:block;padding:10px 15px 5px;margin:10px 0 5px;border:1px solid #E0E0E0;background:#FFF;overflow:hidden;}
+.comment-list li .comment-level-odd {background:#FAFAFA;border:#E0E0E0 dashed 1px;border-radius:1em;}
+.comment-list li .comment-level-even {background:#FFF;}
+.comment-list li .comment-reply {text-align:right;}
+.comment-list li .comment-reply a {border:none;font-size:12px;color:#AAA;}
+.comment-list li .comment-reply a:hover {color:#FF8C00;}
+.comment-list .tip {background:#FFF;width:500px;margin:0;padding:0;margin-top:80px;margin-left:180px;border:0;position:absolute;z-index:3}
+.comment-list .tip .innerbox {border:3px solid #CCC;padding:10px 15px;}
+.comment-list .tip .comment-reply {display:none;}
+.comment-list .tip .comment-children {display:none;}
+.comment-meta {padding-bottom:8px;color:#999;font-size:11px;}
+.comment-author {display:block;font-size:14px;color:#444;}
+.comment-author .ua_info {font-size:12px;font-family:'josefinsansRegular',arial,serif;}
+.comment-author cite.fn {font-style:normal;line-height:26px;height:25px;margin:5px 0;}
+.comment-author img.avatar {background-color:#FFF;border:1px solid #B7B7B7;float:left;margin:6px 10px 0 0;padding:2px;}
+.comment-body {-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;overflow:hidden;}
+.respond {margin:0;padding:0;}
+.respond .border {margin-bottom:10px;	margin-top:10px;}
+.respond .cancel-comment-reply {float:right;font-size:12px;}
+.respond .cancel-comment-reply a {border:none;color:#A0A0A0;}
+.respond .cancel-comment-reply a:hover {color:#FF8C00;}
+#comment_form {padding-right:8px;}
+#comment_form label {font-size:14px;color:#555;}
+#comment_form label .required {color:#FF8C00;padding-left:5px;font-size:14px;}
+#comment_form .text {-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;width:250px;margin-right:15px;border:1px solid #D2D2D2;height:20px;margin:5px;}
+#comment_form textarea {-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;width:100%;height:180px;border:1px solid #D2D2D2;margin:5px;}
+#comment_form input:focus,#comment_form textarea:focus {border:1px solid #FF8C00;}
+#comment_form .submit {-moz-border-radius:3px;-webkit-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;color:#FFF;background:#D27400;border:1px solid #D27400;margin:5px 0;padding:2px;width:250px;}
+#comment_form .submit:hover {background:#FF8C00;border:1px solid #FF8C00;}
+#comment_form #webmail{float:right;text-align:right;line-height:30px;}
+#real-avatar .avatar {float:right;padding:2px;border:1px solid #ddd;margin-right:20px;_margin-right:10px;}
 
-.post h2 a:hover,
-.post h2 a:active,
-.post h2 a:focus {
-	color: #000;
-}
+/*璇勮-椤电爜鏍峰紡*/
+#commpagenavi{width:666px;margin:0 auto;margin:auto 2px;text-shadow:0 1px 0 white;text-align:center;font-family:'josefinsansRegular',arial,serif;font-size:30px;text-align:center;font-weight:normal;line-height:35px;margin-bottom:10px;padding:6px 0;}
+#commpagenavi li {margin:0 5px 0 0;	display:inline;}
+#commpagenavi li a {color:#aaa;text-decoration:none;}
+#commpagenavi li a:hover {color:#FF8C00;text-decoration:none;}
+#commpagenavi #line{margin:0 5px;margin-left:12px;}
 
-.post blockquote {
-	background: #eee;
-}
-
-#wrapper .post img {
-  border: solid #ddd 1px; background-color: #fff; padding: 5px
-}
-
-.date {
-	color: #aaa;
-}
-
-.entry a:link,
-.comment a:link {
-	color: #0087C1;
-}
-
-.entry a:visited,
-.comment a:visited {
-	color: #0087C1;
-}
-
-.entry a:hover,
-.entry a:active,
-.entry a:focus,
-.comment a:hover,
-.comment a:active,
-.comment a:focus {
-	color: #000;
-}
-
-.post img {
-	border: none;
-}
-
-.post .number-of-comments a:link,
-.post .number-of-comments a:visited {
-	color: #333;
-}
-
-.post .number-of-comments a:hover,
-.post .number-of-comments a:active,
-.post .number-of-comments a:focus {
-	color: #0087C1;
-}
-
-#comments h3,
-#commentform h3 {
-	color: #222;
-}
-
-.comment {
-	border-top: 1px solid #ddd;
-}
-
-.highlighted {
-	background: #fefefe;
-	border-top: 1px solid #e6e6e7;
-}
-
-.highlighted a:link,
-.highlighted a:visited {
-	color: #0087C1;
-}
-
-.comment cite {
-	color: #333;
-}
-
-.comment .moderation {
-	color: #333;
-}
-
-#commentform {
-	background: #fff;
-	border: 1px solid #ddd;
-
-}
-
-#commentform input#author, #commentform input#email, #commentform input#url, #commentform textarea {
-  border: 1px solid #ccc;
-}
-
-#commentform a:link,
-#commentform a:visited {
-	color: #0087C1;
-}
-
-#commentform a:hover,
-#commentform a:active,
-#commentform a:focus {
-	color: #CCC;
-}
-
-.pagination {
-	color: #0087C1;
-}
-.pagination a:link,
-.pagination a:visited {
-	color: #0087C1;
-}
-
-.pagination a:hover,
-.pagination a:active,
-.pagination a:focus {
-	color: #000;
-}
-
-#sidebar {
-	color: #999;
-}
-
-#sidebar a:link,
-#sidebar a:visited {
-	color: #555;
-}
-
-#sidebar a:hover,
-#sidebar a:active,
-#sidebar a:focus {
-	color: #0087C1;
-}
-
-#sidebar #sb-2 a:link,
-#sidebar #sb-2 a:visited {
-	color: #555;
-}
-
-#sidebar #sb-2 a:hover,
-#sidebar #sb-2 a:active,
-#sidebar #sb-2 a:focus {
-	color: #0087C1;
-}
-
-#sidebar #sb-2 .input-text {
-  border: 1px solid #ccc;
-}
-
-#footer {
-	border-top: 1px solid #ddd;
-	color: #828282;
-}
-
-#footer a:link,
-#footer a:visited {
-	color: #0087C1;
-}
-
-#footer a:hover,
-#footer a:active,
-#footer a:focus {
-	color: #000;
-}
-
-.entry ul li {
-	background: url(img/bullet.gif) 0 7px no-repeat;
-}
-
-#sidebar .email {
-	background: url(img/ico-mail.gif) 0 4px no-repeat;
-}
-
-#sidebar #rss li {
-	background: url(img/ico-rss.png) left center no-repeat;
-}
-
-/* INLINE TAG LIST */
-.inline_tag_list { padding-left: 30px; font-size: 12px; color: #999; }
-.inline_tag_list a { color: #999; }
-.inline_tag_list strong { display: none; }
-
+/*鐣欒█鏈� http://85s.me*/
+#main .post1{margin:-40px 60px 20px;border:0;}
+.greaders ul {width:100%;list-style:none;padding-left:5px;}
+.greaders ul li {list-style:none;width:40px;height:40px;margin:5px;float:left;display:inline-block;}

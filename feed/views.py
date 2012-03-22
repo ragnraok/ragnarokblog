@@ -1,7 +1,7 @@
 # Create your views here.
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed, Rss201rev2Feed
-from ragnarokblog.blog.models import Article
+from ragnarokblog.blog.models import Articles_deamon
 
 class LastestArticlesFeed(Feed):
         title = "the lastest article in ragnarok blog"
@@ -10,7 +10,7 @@ class LastestArticlesFeed(Feed):
         feed_type = Rss201rev2Feed
 
         def items(self):
-                return Article.objects.order_by('-publish_date')[:20]
+                return Articles_deamon.objects.order_by('-publish_date')[:20]
 
         def item_title(self, item):
                 return item.title

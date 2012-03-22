@@ -1,7 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 from django.shortcuts import HttpResponseRedirect
-from ragnarokblog.filebrowser.sites import site
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -28,9 +27,9 @@ urlpatterns = patterns('',
 
     url(r'^about/$', 'ragnarokblog.views.render_about'),
 
-    url(r'^admin/filebrowser/', include(site.urls)),
-
     url(r'^grappelli/', include('ragnarokblog.grappelli.urls')),
+
+    url(r'^markdown/', include('django_markdown.urls')),
 
 )
 
@@ -41,4 +40,7 @@ urlpatterns += patterns('',
 
          url(r'^css/(?P<path>.*)$', 'django.views.static.serve',
              {'document_root': settings.STATIC_ROOT + '/css'}),
+
+         url(r'^static(?P<path>.*)$', 'django.views.static.serve',
+             {'document_root': settings.STATIC_ROOT})
 )

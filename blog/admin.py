@@ -3,7 +3,7 @@ from tagging.models import Tag
 from django.contrib import admin
 from django.conf import settings
 from django.db import models
-from ragnarokblog.filebrowser.widgets import FileInput
+from django_markdown.widgets import MarkdownWidget
 import os
 
 
@@ -22,22 +22,25 @@ class ArticleAdmin(admin.ModelAdmin):
         list_display = ('title', 'status', 'author', 'publish_date',)
         ordering = ['-publish_date']
         radio_fields = {'status': admin.HORIZONTAL}
-        raw_id_fields = ('categories', )
         list_filter = ('enable_comment', 'status', )
         list_per_page = 30
         save_on_top = True
 
         formfield_overrides = {
-                models.ImageField:{'widget': FileInput}
+                models.TextField: {'widget': MarkdownWidget},
         }
 
         fieldsets = (
-                (None, {
-                        'fields': ('title', 'body', 'author', 'slug', 'tags')
+                ('Basic', {
+                        'classes': ('collapse', ),
+                        'fields': ('title', 'author', 'slug', 'tags')
+                }),
+                ('Body', {
+                        'fields': ('summary', ),
                 }),
                 ('Advanced', {
                         'classes': ('collapse', ),
-                        'fields': ('summary', 'status', 'enable_comment', 'categories')
+                        'fields': ('status', 'enable_comment')
                 })
         )
 

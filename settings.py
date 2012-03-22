@@ -3,15 +3,14 @@
 import os
 import logging
 
-DEBUG = False
+DEBUG = True 
 TEMPLATE_DEBUG = DEBUG
-FILEBROWSER_DEBUG = DEBUG
+
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
-    ('Ragnarok', 'okone1288@gmail.com'),
 )
 
 
@@ -44,9 +43,10 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 # Your site URL
-SITE_URL = 'http://ragnarokstack.herokuapp.com'
+SITE_URL = ''
 
-URL_DOMAIN = 'http://ragnarokstack.herokuapp.com'
+# Your site domain
+URL_DOMAIN = 'http://ragnarokstack.me/'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -75,7 +75,6 @@ STATIC_ROOT = os.path.join(HERE, 'static/').replace('\\', '/')
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
-FILEBROWSER_DIRECTORY = ''
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -83,6 +82,9 @@ FILEBROWSER_DIRECTORY = ''
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
 
 GRAPPELLI_INDEX_DASHBOARD = 'ragnarokblog.dashboard.CustomIndexDashboard'
+
+# the skin theme for django-markdown editor
+MARKDOWN_EDITOR_SKIN = 'simple'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -133,7 +135,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-DISQUS_API_KEY = 'QFemJJENk6WRjLqtWkMsyAN8XpkZHwAXaKxu9ZezrNLyfLQyT6jYhQ0gW57gB5E1'
+# Your disqus api key and shortname, go to disqus.com to apply
+DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = 'ragnarokstack'
 
 INSTALLED_APPS = (
@@ -146,17 +149,15 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
      'grappelli.dashboard',
      'grappelli',
-     'filebrowser',
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    # 'ragnarokblog.tinymce',
      'ragnarokblog.blog',
      'ragnarokblog.feed',
      'tagging',
-     #'tinymce',
-     #'django.contrib.comments',
      'disqus',
+     'markdown',
+     'django_markdown',
 
 )
 

@@ -1,104 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head profile="http://gmpg.org/xfn/11">
-    <title>
-            {% block title %}
-			Ragnarok
-            {% endblock %}
-    </title>
-    {% block base_link %}
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/css/bootstrap-old.css" type="text/css">
-	<link rel="stylesheet" href="http://www.vostokstudio.com/blog/wp-content/themes/white/style.css" type="text/css" media="screen"/>
-	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print"/>
-    <!-- Syntax Highlighter -->
-    <!-- Include required JS files -->
-    <script type="text/javascript" src="/css/shCore.js"></script>
-    <!--Include a brush for every language you want to highlight -->
-    <script type="text/javascript" src="/css/shBrushPhp.js"></script>
-    <script type="text/javascript" src="/css/shBrushSql.js"></script>
-    <script type="text/javascript" src="/css/shBrushPython.js"></script>
-    <script type="text/javascript" src="/css/shBrushCpp.js"></script>
-    <script type="text/javascript" src="/css/shBrushRuby.js"></script>
-    <script type="text/javascript" src="/css/shBrushBash.js"></script>
-    <script type="text/javascript" src="/css/shBrushCss.js"></script>
-    <script type="text/javascript" src="/css/shBrushJava.js"></script>
-    <script type="text/javascript" src="/css/shBrushJSCript.js"></script>
-    <script type="text/javascript" src="/css/shBrushMatlab.js"></script>
-    <script type="text/javascript" src="/css/shBrushPlain.js"></script>
-    <script type="text/javascript" src="/css/shBrushXml.js"></script>
-    <script type="text/javascript" src="/css/shBrushJScript.js"></script>
+<html>
+        <head>
+                <title>
+                        {% block title %}
+                            Ragnarok
+                        {% endblock %}
+                </title>
+                <link href="/feed" rel="alternate" title="http://ragnarokstack.me" type="application/atom+xml">
+                <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+                
+                <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+                <link type="text/css" rel="stylesheet" href="/css/autumn.css" media="all"/>
+                <script type="text/javascript" src="/css/shBrushPython.js"></script>
+                <script type="text/javascript" src="/css/shBrushJava.js"></script>
 
+                    <!-- Include *at least* the core style and default theme -->
+                    <link href="/css/shCore.css" rel="stylesheet" type="text/css" />
+                    <link href="/css/shThemeFadeToGrey.css" rel="stylesheet" type="text/css" />
 
-    <!-- Include *at least* the core style and default theme -->
-    <link href="/css/shCore.css" rel="stylesheet" type="text/css" />
-    <link href="/css/shThemeRDark.css" rel="stylesheet" type="text/css" />
-
-    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
-    <script type="text/javascript">
-            SyntaxHighlighter.all()
+                    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+                    <script type="text/javascript">
+                            SyntaxHighlighter.all()
         </script>
-    
-    {% endblock %}
-</head>
-<body>
-<div id="wrapper">
-        <div class="topbar">
-            <div class="topbar-inner">
-                    <div class="container">
-                            <a href="/blog" class="brand">Ragnarokstack.me</a>
-                            <ul class="nav">
-                                    <li><a href="/about">About</a></li>
-                                    <li><a href="/feed">Feed</a></li>
-                            </ul>
-							<!-- search articles use google search service -->
-                            <form id="search" action="http://google.com/search" method="get" class="pull-left">
-									<input type="hidden" name="q" value="site:ragnarokstack.me" />
-                                    <input type="text" placeholder="Search" name="q">
-                            </form>
-                            <ul class="nav secondary-nav">
-                                    <li><a href="/admin">Admin</a></li>
-                            </ul>
-                    </div>
-            </div>
-        </div>
-        {% block header %}
-        <div id="header">
-		    <h1><a href="/blog">Ragnarok</a></h1>
-		    <p class="description"> an ACG Fan</a></p>
-        </div>
-        {% endblock %}
 
-        {% block content %}
-        {% endblock %}
-		{% if is_paginated %}
-		<div class="pagination">
-			<ul>
-				{% if has_previous %}
-                <li class="previous"><a href="?page={{ previous }}" >&laquo;</a></li>
-				{% endif %}
-				{% for p in page_range %}
-                {% if p == page %}
-                <li class="active"><a href="?page={{ p }}">{{ p }}</a></li>
-                {% else %}
-				<li><a href="?page={{ p }}">{{ p }}</a></li>
-                {% endif %}
-				{% endfor %}
-				{% if has_next %}
-				<li class="next"><a href="?page={{ next }}">&raquo;</a></li>
-				{% endif %}
-			</ul>
-		</div>
-		{% endif %}
-        <div id="footer">
-                <p>
-                Copyright
-                <a href="#" hreflang="en">Ragnarok</a> 
-                theme by 
-                <a href="http://www.vostokstudio.com/blog/" hreflang="en">Vostok Theme</a>
-                </p>
-        </div><!-- close:footer -->
-</div>
-</body>
+
+
+        </head>
+        <body class="home blog">
+                <header id="header">
+                <h1><a href="{% block header_link %}/{% endblock %}">{% block header_name %}Ragnarok{% endblock %}</a></h1>
+                <aside id="toolBox">
+                <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="https://github.com/ragnraok">Code</a></li>
+                        <li><a href="/admin">Admin</a></li>
+                </ul>
+                </aside>
+                </header>
+                <!-- article start -->
+                <article id="main">
+                    {% block content %}
+                    <!-- article content -->
+                    {% endblock %}
+                    <div class="clear"></div>
+                    {% if is_paginated %}
+                    <div id="pagenavi">
+                            <ol class="page-navigator">
+                                    {% for p in page_range %}
+                                    <li class="current"><a href="?page={{ p }}">{{ p }}</a></li>
+                                    {% endfor %}
+                            </ol>
+                    </div>
+                    {% endif %}
+                    <div id="sidebar">
+                            <div class="widget" id="known">		
+                                    <p></p>
+                            </div>
+                            <div class="widget" id="rss">		
+                                    <ul>
+                                            <li></li>
+                                            <li></li>
+                                    </ul>
+                            </div>		
+                    </div><!-- end #sidebar -->
+                </article>
+                <!-- article end -->
+                <footer id="footer">
+                <div class = "text_right">
+                        <div class="CRight">Copyright By Ragnarok</div>
+                </div>
+                </footer>
+        </body>
 </html>
 

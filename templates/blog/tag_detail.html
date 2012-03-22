@@ -1,37 +1,35 @@
 {% extends 'base.html' %}
 {% block title %}
 Tag: {{ tag }}
+{% block header_link %}
+#
 {% endblock %}
 
-{% block header %}
-<div id="header">
-     <h1><a href="#">Articles for "{{ tag }}"</a></h1>
-</div>
+{% block header_name %}
+Articles for {{ tag }}
+{% endblock %}
+
 {% endblock %}
 {% block content %}
-        <div id="wrapper">
-            {% for article in tag_article_list %}
-                <div id="content">
-        		    <div id="main-content">
-        					<div class="post">
-                                <h2><a href="{{ article.get_absolute_url }}" >{{ article.title }}</a></h2>
-                                <span class="date">{{ article.publish_date|date:"F jS, Y" }}</span>
-                                <div class="entry">
-                                        {{ article.summary_html|safe }}
-                                </div>
-        			</div>
-                </div>
-           {% if is_paginated %}
-            <div class="pagination clearfix">
-                {% if has_previous %}
-                <div class="prev"><a href="?page={{ previous }}" >Previous articles</a></div>
-                {% endif %}
-                {% if has_next %}
-                <div class="next"><a href="?Page={{ next }}">More articles</a></div>
-                {% endif %}
-			</div>
-           {% endif %}
-        </div>
-        {% endfor %}
-
+           {% for article in tag_article_list %}
+                    <section class="post page1">
+                    <div class="title">
+							<h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                            <p>
+                            <span class="meta-time">{{ article.publish_date|date:"F jS, Y" }}</span>
+                            </p>
+                    </div>
+                    <div class="content">
+                            {{ article.summary_html|safe }}
+							<div class="clear"></div>
+							<p></p>
+							<div class="meta-tag">
+									Tag:
+									{% for tag in article.tags.split %}
+									<a href="/blog/tags/{{ tag }}/">{{ tag }}</a>
+									{% endfor %}
+							</div>
+                    </div>
+                    </section>
+		   {% endfor %}
 {% endblock %}

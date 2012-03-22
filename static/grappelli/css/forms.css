@@ -157,7 +157,7 @@ input, textarea, select, button {
     margin: 0;
     vertical-align: top;
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 25px;
     font-weight: bold;
     box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
 }
@@ -963,6 +963,8 @@ textarea,
 .vLargeTextField, 
 .vXMLLargeTextField {
     width: 278px;
+    height: 600px;
+    font-size: 100px;
 }
 
 .row select {
@@ -971,6 +973,7 @@ textarea,
 
 .vLargeTextField {
     height: 118px;
+    font-size: 100px;
 }
 
 

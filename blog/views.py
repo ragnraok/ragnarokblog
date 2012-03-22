@@ -27,6 +27,7 @@ def article_list(request, page_size = 5, cur_page = 0, **kwargs):
                 paginate_by = page_size, # how many articles in each page
                 page = cur_page, # the current page, default 0
                 template_object_name = 'article',
+                template_name= 'blog/article_list.html',
                 **kwargs
                 )
 
@@ -41,13 +42,14 @@ def archive_article_detail(request, year, month, day, slug, **kwargs):
                 slug = slug,
                 date_field = 'publish_date',
                 template_object_name = 'article',
+                template_name= 'blog/article_detail.html',
                 extra_context = {'site_url': settings.SITE_URL,
                                  'shortname': settings.DISQUS_WEBSITE_SHORTNAME}
                 )
 
 def tag_detail(request, slug, template_name = 'blog/tag_detail.html', **kwargs):
         tag = get_object_or_404(Tag, name__iexact = slug)
-        logger.info('archive tag detail, name ' + tag)
+        logger.info('archive tag detail, name ' + str(tag))
         return list_detail.object_list(
                 request,
                 template_name = template_name,
