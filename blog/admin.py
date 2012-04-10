@@ -36,7 +36,7 @@ class ArticleAdmin(admin.ModelAdmin):
                         'fields': ('title', 'author', 'slug', 'tags')
                 }),
                 ('Body', {
-                        'fields': ('summary', ),
+                        'fields': ('raw_body', ),
                 }),
                 ('Advanced', {
                         'classes': ('collapse', ),

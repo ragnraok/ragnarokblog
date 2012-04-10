@@ -1,16 +1,16 @@
 # Create your views here.
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed, Rss201rev2Feed
-from ragnarokblog.blog.models import Articles_deamon
+from ragnarokblog.blog.models import Article
 
 class LastestArticlesFeed(Feed):
-        title = "the lastest article in ragnarok blog"
+        title = "Ragnarok"
         link = "/feed/"
         description = "Updates on changes and addition to ragnarok blog"
         feed_type = Rss201rev2Feed
 
         def items(self):
-                return Articles_deamon.objects.order_by('-publish_date')[:20]
+                return Article.objects.order_by('-publish_date')[:20]
 
         def item_title(self, item):
                 return item.title

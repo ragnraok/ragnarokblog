@@ -27,7 +27,7 @@ urlpatterns = patterns('',
 
     url(r'^about/$', 'ragnarokblog.views.render_about'),
 
-    url(r'^grappelli/', include('ragnarokblog.grappelli.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
 
     url(r'^markdown/', include('django_markdown.urls')),
 

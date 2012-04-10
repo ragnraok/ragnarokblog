@@ -137,7 +137,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Your disqus api key and shortname, go to disqus.com to apply
 DISQUS_API_KEY = ''
-DISQUS_WEBSITE_SHORTNAME = 'ragnarokstack'
+DISQUS_WEBSITE_SHORTNAME = ''
 
 INSTALLED_APPS = (
     'django.contrib.auth',
